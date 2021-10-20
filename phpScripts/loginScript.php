@@ -1,6 +1,6 @@
 <?php
 require('connectDB.php');
-require('cleanse.php');
+require('functions.php');
 error_reporting(E_ERROR | E_PARSE);
 session_start();
 if(isset($_POST['username']) && isset($_POST['password'])) {
@@ -22,7 +22,7 @@ if(isset($_POST['username']) && isset($_POST['password'])) {
       $_SESSION['userType'] = $usertype;
       $_SESSION['SelectedDate'] = date('Y-m-d', time());
       if($usertype == 0){
-        header("Location: dashboard.php");
+        header("Location: index.php");
       } elseif ($usertype == 1){
         header("Location: ManagementDashboard.php");
       } elseif ($usertype == 2){

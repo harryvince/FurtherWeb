@@ -7,4 +7,9 @@ function sanitize($data) {
     return $data;
 }
 
+function getTime(){
+    $date = date("H:i:s");
+    return $date;
+}
+
 ?>
