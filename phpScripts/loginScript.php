@@ -1,11 +1,11 @@
 <?php
 require('connectDB.php');
+require('cleanse.php');
 error_reporting(E_ERROR | E_PARSE);
 session_start();
 if(isset($_POST['username']) && isset($_POST['password'])) {
-  $username = mysqli_real_escape_string($conn, $_POST['username']);
-  $password = mysqli_real_escape_string($conn, $_POST['password']);
-  $userid;
+  $username = sanitize(mysqli_real_escape_string($conn, $_POST['username']));
+  $password = sanitize(mysqli_real_escape_string($conn, $_POST['password']));
 
   $password = hash('sha256', $password);
 
@@ -16,26 +16,16 @@ if(isset($_POST['username']) && isset($_POST['password'])) {
   $stmt -> store_result();
   if($stmt->num_rows == 1){
     if($stmt->fetch()){
+      $_SESSION['username'] = $username;
+      $_SESSION['password'] = $password;
+      $_SESSION['userID'] = $userid;
+      $_SESSION['userType'] = $usertype;
+      $_SESSION['SelectedDate'] = date('Y-m-d', time());
       if($usertype == 0){
-        $_SESSION['username'] = $username;
-        $_SESSION['password'] = $password;
-        $_SESSION['userID'] = $userid;
-        $_SESSION['userType'] = $usertype;
-        $_SESSION['SelectedDate'] = date('Y-m-d', time());
         header("Location: dashboard.php");
       } elseif ($usertype == 1){
-        $_SESSION['username'] = $username;
-        $_SESSION['password'] = $password;
-        $_SESSION['userID'] = $userid;
-        $_SESSION['userType'] = $usertype;
-        $_SESSION['SelectedDate'] = date('Y-m-d', time());
         header("Location: ManagementDashboard.php");
       } elseif ($usertype == 2){
-        $_SESSION['username'] = $username;
-        $_SESSION['password'] = $password;
-        $_SESSION['userID'] = $userid;
-        $_SESSION['userType'] = $usertype;
-        $_SESSION['SelectedDate'] = date('Y-m-d', time());
         header("Location: TechDashboard.php");
       }
     }
