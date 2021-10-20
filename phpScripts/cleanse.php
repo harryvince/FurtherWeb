@@ -1,5 +1,4 @@
 <?php
-require('connectDB.php');
 
 function sanitize($data) {
     $data = stripslashes($data);
