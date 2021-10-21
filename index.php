@@ -1,9 +1,4 @@
-<?php 
-if (session_status() === PHP_SESSION_NONE) {
-    session_start();
-    $_SESSION['basketTotal'] = 0.00;
-}
-?>
+<?php require('phpScripts/session.php'); ?>
 
 <header>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
@@ -12,7 +7,10 @@ if (session_status() === PHP_SESSION_NONE) {
 </header>
 
     <nav class="navbar navbar-dark bg-dark justify-content-between">
-        <a class="navbar-brand" style="margin-left:20px;">Vince Shops</a>
+        <div class="navbar-nav mr-auto flex-row">
+            <a class="navbar-brand" style="margin-left:20px;">Vince Shops</a>
+            <?php require('phpScripts/adminAuth.php'); ?>
+        </div>
         <span class="navbar-text" style="margin-right:10px;">
             <a style="margin-right:10px;">£ <?php
             if ($_SESSION['basketTotal'] == 0){
@@ -21,17 +19,19 @@ if (session_status() === PHP_SESSION_NONE) {
              echo $_SESSION['basketTotal'];
             }
              ?></a>
-            <a href="#basket" style="margin-right:10px;"><img src="images/cart.png" style="height:30px;width:40px;"></a>
+            <a class="basketIconA" href="basket.php"><img class="basketIcon" src="images/cart.png"></a>
             <button class="btn btn-outline-success" style="margin-right:2px">
-                <a href="loginPage.php">
                 <?php
                     if (isset($_SESSION['username'])){
+                        echo"<a href='phpScripts/logout.php'>";
                         echo "Hello, ".$_SESSION['username'];
+                        echo "</a>";
                     } else {
+                        echo"<a href='loginPage.php'>";
                         echo "Login";
+                        echo"</a>";
                     }
                 ?>
-                </a>
             </button>
         </span>
     </nav>

@@ -20,13 +20,7 @@ if(isset($_POST['username']) && isset($_POST['password'])) {
       $_SESSION['userID'] = $userid;
       $_SESSION['userType'] = $usertype;
       $_SESSION['SelectedDate'] = date('Y-m-d', time());
-      if($usertype == 0){
-        header("Location: index.php");
-      } elseif ($usertype == 1){
-        header("Location: ManagementDashboard.php");
-      } elseif ($usertype == 2){
-        header("Location: TechDashboard.php");
-      }
+      header("Location: index.php");
     }
   }
   else {
