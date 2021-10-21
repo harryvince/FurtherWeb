@@ -1,5 +1,4 @@
 <?php 
-require('phpScripts/functions.php');
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
     $_SESSION['basketTotal'] = 0.00;
@@ -38,7 +37,5 @@ if (session_status() === PHP_SESSION_NONE) {
     </nav>
 
 <body>
-    <div class="card-deck" style="display:flex">
         <?php require('phpScripts/populateCards.php') ?>
-    </div>
 </body
