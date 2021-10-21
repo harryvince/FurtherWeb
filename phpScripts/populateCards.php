@@ -10,15 +10,15 @@ $stmt -> store_result();
 while ($stmt->fetch()){
     if ($x==0){
       echo"<div class='card-deck d-flex justify-content-center'>";
-      generateCard($imageLoc, $productName, $productDes, $cost);
+      generateCard($productID, $imageLoc, $productName, $productDes, $cost);
       $x++;
     } elseif ($x % 5 == 0){
-      generateCard($imageLoc, $productName, $productDes, $cost);
+      generateCard($productID, $imageLoc, $productName, $productDes, $cost);
       echo"</div>";
       echo"<div class='card-deck d-flex justify-content-center'>";
   $x++;
     } else{
-      generateCard($imageLoc, $productName, $productDes, $cost);
+      generateCard($productID, $imageLoc, $productName, $productDes, $cost);
       $x++;
   }
 }
