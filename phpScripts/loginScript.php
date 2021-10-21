@@ -17,7 +17,6 @@ if(isset($_POST['username']) && isset($_POST['password'])) {
   if($stmt->num_rows == 1){
     if($stmt->fetch()){
       $_SESSION['username'] = $username;
-      $_SESSION['password'] = $password;
       $_SESSION['userID'] = $userid;
       $_SESSION['userType'] = $usertype;
       $_SESSION['SelectedDate'] = date('Y-m-d', time());

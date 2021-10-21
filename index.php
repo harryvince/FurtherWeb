@@ -24,6 +24,7 @@ if (session_status() === PHP_SESSION_NONE) {
              ?></a>
             <a href="#basket" style="margin-right:10px;"><img src="images/cart.png" style="height:30px;width:40px;"></a>
             <button class="btn btn-outline-success" style="margin-right:2px">
+                <a href="loginPage.php">
                 <?php
                     if (isset($_SESSION['username'])){
                         echo "Hello, ".$_SESSION['username'];
@@ -31,6 +32,7 @@ if (session_status() === PHP_SESSION_NONE) {
                         echo "Login";
                     }
                 ?>
+                </a>
             </button>
         </span>
     </nav>
