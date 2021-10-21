@@ -11,7 +11,7 @@ if(isset($_SESSION['username'])!="")
 <head>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/logincss.css">
-  <title>Login | DigiTech</title>
+  <title>Login | Vince Shops</title>
   <link rel="icon" href="images/favicon.ico"/>
   <script src="https://use.typekit.net/rjb4unc.js"></script>
   <script>try{Typekit.load({ async: true });}catch(e){}</script>
@@ -20,7 +20,7 @@ if(isset($_SESSION['username'])!="")
 <div class="loginbackground">
 <body>
     <div class="container">
-    <div class="logo"><img src="images/icon.png" style="width:40px;height:40px;margin-top:5px;margin-right:5px;" /></div>
+    <div class="logo"><img src="images/cart.png" style="width:40px;height:40px;margin-top:5px;margin-right:5px;" /></div>
     <?php require('phpScripts/loginScript.php'); ?>
     <div class="login-item">
       <form method="post" class="form form-login">
