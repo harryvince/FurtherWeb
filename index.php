@@ -2,6 +2,7 @@
 session_start();
 if (!isset($_SESSION['basketTotal'])){
     $_SESSION['basketTotal'] = 0.00;
+    $_SESSION['basket'] = array();
 }
 require('phpScripts/session.php');
 ?>
@@ -50,16 +51,13 @@ require('phpScripts/session.php');
 <script>
 $(function(){
   $(document).on('click','.addToCart',function(){
-    var join_id = this.id;
-    var split_join_id = join_id.split("_");
-    var product_ID = split_join_id[0];
-    var cost = split_join_id[1];
+    var product_ID = this.id;
       $.ajax({
           type:'POST',
           url:'phpScripts/addToCart.php',
-          data:{'product_ID':product_ID, 'cost':cost},
+          data:{'product_ID':product_ID},
           success: function(data){
-              alert ("Item Succesfully added to basket");
+              alert (data);
               location.reload();
           }
       });

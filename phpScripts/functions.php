@@ -19,7 +19,7 @@ function generateCard($id, $image, $title, $desc, $cost){
         <div class='card-body'>
           <h5 class='card-title'>$title</h5>
           <p class='card-text'>$desc</p>
-          <a type='submit' id='".$id."_$cost' name='addToCart' value='".$id."_$cost' class='btn btn-primary addToCart'>Add to cart</a>
+          <a type='submit' id='$id' name='addToCart' value='$id' class='btn btn-primary addToCart'>Add to cart</a>
           <p class='card-text'><small class='text-muted'>£$cost</small></p>
         </div>
     </div> ";
