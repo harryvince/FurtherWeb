@@ -18,7 +18,7 @@ require('phpScripts/session.php');
     <nav class="navbar navbar-dark bg-dark justify-content-between">
         <div class="navbar-nav mr-auto flex-row">
             <a class="navbar-brand" style="margin-left:20px;">Vince Shops</a>
-            <?php require('phpScripts/adminAuth.php'); ?>
+            <?php require('phpScripts/navbarItems.php'); ?>
         </div>
         <span class="navbar-text" style="margin-right:10px;">
             <a style="margin-right:10px;">£ <?php
