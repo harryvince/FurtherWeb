@@ -1,5 +1,5 @@
 <?php 
-session_start();
+require('phpScripts/session.php');
 if (!isset($_SESSION['basketTotal'])){
     $_SESSION['basketTotal'] = 0.00;
     $_SESSION['basket'] = array();
