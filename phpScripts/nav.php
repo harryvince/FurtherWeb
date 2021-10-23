@@ -11,7 +11,7 @@
          echo $_SESSION['basketTotal'];
         }
          ?></a>
-        <a class="basketIconA" href="basket.php"><img class="basketIcon" src="images/cart.png"></a>
+        <?php require('basket.php')?>
         <button class="btn btn-outline-success" style="margin-right:2px">
             <?php
                 if (isset($_SESSION['username'])){
@@ -25,5 +25,16 @@
                 }
             ?>
         </button>
+        <?php
+            if(!isset($_SESSION['username'])){
+                echo"
+                <button class='btn btn-outline-success' style='margin-right:2px'>
+                <a href='RegisterPage.php'>
+                Register
+                </a>
+                </button>
+                ";
+            }
+        ?>
     </span>
 </nav>
