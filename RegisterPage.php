@@ -1,4 +1,5 @@
 <html>
+
 <?php
 session_start();
 if(isset($_SESSION['username'])!="")
@@ -10,7 +11,7 @@ if(isset($_SESSION['username'])!="")
 <head>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/logincss.css">
-  <title>Login | Vince Shops</title>
+  <title>Register | Vince Shops</title>
   <link rel="icon" href="images/favicon.ico"/>
   <script src="https://use.typekit.net/rjb4unc.js"></script>
   <script>try{Typekit.load({ async: true });}catch(e){}</script>
@@ -20,12 +21,7 @@ if(isset($_SESSION['username'])!="")
 <body>
     <div class="container">
     <div class="logo"><img src="images/cart.png" style="width:40px;height:40px;margin-top:5px;margin-right:5px;" /></div>
-    <?php if(isset($_SESSION['registered'])){
-      echo "<br>";
-      echo "<br>";
-      echo "<p class='fonts' style='text-align: center; color: green;'>You are now registered, Please login</p>";
-    }
-    require('phpScripts/loginScript.php'); ?>
+    <?php require('phpScripts/registerScript.php'); ?>
     <div class="login-item">
       <form method="post" class="form form-login">
         <div class="form-field">
@@ -39,7 +35,7 @@ if(isset($_SESSION['username'])!="")
         </div>
 
         <div class="form-field">
-          <input type="submit" value="Log in">
+          <input type="submit" value="Register">
         </div>
       </form>
     </div>
