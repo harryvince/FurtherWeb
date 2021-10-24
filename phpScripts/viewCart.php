@@ -19,7 +19,7 @@ $unique = array_unique($_SESSION['basket']);
         $stmt -> close();
         if(isset($quantity[$unique[$x]])){
         echo"
-        <div class='card mb-3' style='max-width: 540px;'>
+        <div class='card text-center mb-3' style='max-width: 540px;'>
           <div class='row g-0'>
             <div class='col-md-4'>
               <img src='images/".$image."' class='img-fluid rounded-start'>
@@ -27,12 +27,13 @@ $unique = array_unique($_SESSION['basket']);
             <div class='col-md-8'>
               <div class='card-body'>
                 <h5 class='card-title'>".$name."</h5>
-                <div class='form-group'>
-                  <label for='InputQuantity'>Quantity</label>
-                  <input type='number' class='form-control w-25 updateQuantity' id='".$id."' placeholder='".$quantity[$unique[$x]]."'>
+                <div class='form-row justify-content-center d-flex'>
+                  <label for='InputQuantity' style='margin-right:5px;margin-top:1px;'>Quantity:</label>
+                  <input type='number' style='margin-right:10px;' class='form-control form-control-sm w-25 updateQuantity' id='".$id."' placeholder='".$quantity[$unique[$x]]."'>
                 </div>
-                <p class='card-text'><small class='text-muted'>Cost per unit £".$cost."</small></p>
-                <a href='#' id='".$id."' class='btn btn-danger Remove'>Remove</a>
+                <a id='".$id."' style='margin-top:5px;' class='btn btn-danger btn-sm Remove'>Remove</a>
+                <br>
+                <p style='margin-top:5px;' class='card-text'><small class='text-muted'>Cost per unit £".$cost."</small></p>
               </div>
             </div>
           </div>
