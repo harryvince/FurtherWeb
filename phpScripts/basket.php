@@ -18,7 +18,7 @@
       <div class="modal-footer">
         <?php echo "<p style='color:black' class='total'>Total: £".$_SESSION['basketTotal']."</p>"?>
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onClick="RemoveHREF()">Close</button>
-        <button type="button" class="btn btn-primary">Go to Checkout</button>
+        <button type="button" class="btn btn-primary Checkout">Go to Checkout</button>
       </div>
     </div>
   </div>
@@ -33,6 +33,10 @@
         </script>
 <?php         
     }
+
+$numberofItems = count($_SESSION['basket']);
+$loggedIN = isset($_SESSION['username']);
+
 ?>
 
 <script>
@@ -77,6 +81,22 @@ $(function(){
               window.location = window.location.href + "?basket=1";
           }
       });
+  });
+});
+
+$(function(){
+  $(document).on('click','.Checkout',function(){
+    var basketNumber = <?php echo json_encode($numberofItems, JSON_HEX_TAG); ?>;
+    var loggedin = <?php echo json_encode($loggedIN, JSON_HEX_TAG); ?>;
+    if (basketNumber > 0){
+      if (loggedin == true){
+        alert("AJAX FUNCTION HERE");
+      } else {
+        alert("You need to log in before attempting to checkout");
+      }
+    } else {
+      alert("You have no items in your basket!");
+    }
   });
 });
 
