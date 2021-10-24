@@ -90,7 +90,14 @@ $(function(){
     var loggedin = <?php echo json_encode($loggedIN, JSON_HEX_TAG); ?>;
     if (basketNumber > 0){
       if (loggedin == true){
-        alert("AJAX FUNCTION HERE");
+        $.ajax({
+          type:'POST',
+          url:'phpScripts/setCheckoutState.php',
+          data:{'checkout':1},
+          success: function(data){
+            window.location.href = "checkout.php";
+          }
+        });
       } else {
         alert("You need to log in before attempting to checkout");
       }
