@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Oct 21, 2021 at 08:33 PM
+-- Generation Time: Oct 25, 2021 at 01:01 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.3.31
 
@@ -39,7 +39,56 @@ CREATE TABLE `login_table` (
 --
 
 INSERT INTO `login_table` (`userId`, `username`, `password`, `userType`) VALUES
-(1, 'harry', '5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8', 1);
+(1, 'harry', '5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8', 1),
+(2, 'matt', '5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8', 0),
+(4, 'neil', '592932b7281659a4a5cf427b91196619e7c57f511ca81a9319090feddfb2f0c3', 0),
+(5, 'test', '5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8', 0),
+(6, 'admin', '592932b7281659a4a5cf427b91196619e7c57f511ca81a9319090feddfb2f0c3', 1),
+(7, 'dave', '5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8', 0),
+(8, 'shopUser', '5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `orderProducts_table`
+--
+
+CREATE TABLE `orderProducts_table` (
+  `OrderID` int(11) NOT NULL,
+  `ProductID` int(11) NOT NULL,
+  `Quantity` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `orderProducts_table`
+--
+
+INSERT INTO `orderProducts_table` (`OrderID`, `ProductID`, `Quantity`) VALUES
+(2, 4, 4),
+(2, 7, 1),
+(2, 1, 1),
+(2, 8, 15),
+(1, 6, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `order_table`
+--
+
+CREATE TABLE `order_table` (
+  `OrderID` int(11) NOT NULL,
+  `UserID` int(11) NOT NULL,
+  `Total` float NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `order_table`
+--
+
+INSERT INTO `order_table` (`OrderID`, `UserID`, `Total`) VALUES
+(1, 5, 0.99),
+(2, 1, 3937.75);
 
 -- --------------------------------------------------------
 
@@ -80,6 +129,20 @@ ALTER TABLE `login_table`
   ADD PRIMARY KEY (`userId`);
 
 --
+-- Indexes for table `orderProducts_table`
+--
+ALTER TABLE `orderProducts_table`
+  ADD KEY `OrderID` (`OrderID`),
+  ADD KEY `ProductID` (`ProductID`);
+
+--
+-- Indexes for table `order_table`
+--
+ALTER TABLE `order_table`
+  ADD PRIMARY KEY (`OrderID`),
+  ADD KEY `UserID` (`UserID`);
+
+--
 -- Indexes for table `product_table`
 --
 ALTER TABLE `product_table`
@@ -93,13 +156,36 @@ ALTER TABLE `product_table`
 -- AUTO_INCREMENT for table `login_table`
 --
 ALTER TABLE `login_table`
-  MODIFY `userId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `userId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT for table `order_table`
+--
+ALTER TABLE `order_table`
+  MODIFY `OrderID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `product_table`
 --
 ALTER TABLE `product_table`
   MODIFY `ProductID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `orderProducts_table`
+--
+ALTER TABLE `orderProducts_table`
+  ADD CONSTRAINT `OrderID` FOREIGN KEY (`OrderID`) REFERENCES `order_table` (`OrderID`),
+  ADD CONSTRAINT `ProductID` FOREIGN KEY (`ProductID`) REFERENCES `product_table` (`ProductID`);
+
+--
+-- Constraints for table `order_table`
+--
+ALTER TABLE `order_table`
+  ADD CONSTRAINT `UserID` FOREIGN KEY (`UserID`) REFERENCES `login_table` (`userId`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
