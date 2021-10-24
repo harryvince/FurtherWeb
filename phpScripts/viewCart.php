@@ -29,7 +29,7 @@ $unique = array_unique($_SESSION['basket']);
                 <h5 class='card-title'>".$name."</h5>
                 <div class='form-row justify-content-center d-flex'>
                   <label for='InputQuantity' style='margin-right:5px;margin-top:1px;'>Quantity:</label>
-                  <input type='number' style='margin-right:10px;' class='form-control form-control-sm w-25 updateQuantity' id='".$id."' placeholder='".$quantity[$unique[$x]]."'>
+                  <input type='number' style='margin-right:10px;' class='form-control form-control-sm w-25` updateQuantity' id='".$id."' placeholder='".$quantity[$unique[$x]]."'>
                 </div>
                 <a id='".$id."' style='margin-top:5px;' class='btn btn-danger btn-sm Remove'>Remove</a>
                 <br>
