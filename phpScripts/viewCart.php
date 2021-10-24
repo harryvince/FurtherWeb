@@ -30,10 +30,10 @@ $unique = array_unique($_SESSION['basket']);
                 <div class='form-row justify-content-center d-flex'>
                   <label for='InputQuantity' style='margin-right:5px;margin-top:1px;'>Quantity:</label>
                   <input type='number' style='margin-right:10px;' class='form-control form-control-sm w-25 updateQuantity' id='".$id."' placeholder='".$quantity[$unique[$x]]."'>
+                  <a id='".$id."' class='btn btn-danger btn-sm Remove'>Remove</a>
                 </div>
-                <a id='".$id."' style='margin-top:5px;' class='btn btn-danger btn-sm Remove'>Remove</a>
-                <br>
-                <p style='margin-top:5px;' class='card-text'><small class='text-muted'>Cost per unit £".$cost."</small></p>
+                <p style='margin-top:10px;' class='card-text'><small class='text-muted'>Cost per unit £".$cost."</small></p>
+                <p class='card-text'><small class='text-muted'>Cost £".$cost*$quantity[$unique[$x]]."</small></p>
               </div>
             </div>
           </div>
