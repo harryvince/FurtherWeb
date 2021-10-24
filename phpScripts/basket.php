@@ -17,9 +17,47 @@
       </div>
       <div class="modal-footer">
         <?php echo "<p style='color:black' class='total'>Total: £".$_SESSION['basketTotal']."</p>"?>
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onClick="RemoveHREF()">Close</button>
+        <button type="button" class="btn btn-primary">Go to Checkout</button>
       </div>
     </div>
   </div>
 </div>
+
+<?php
+    if(isset($_GET['basket']) && $_GET['basket'] == 1){ ?>
+        <script>
+                 $(function(){
+                     $('#Modal').modal('show');
+                 });
+        </script>
+<?php         
+    }
+?>
+
+<script>
+
+$(function(){
+  $(document).on('change','.updateQuantity',function(){
+    var product_ID = this.id;
+    var quantity = document.getElementById(product_ID).value;
+    $.ajax({
+          type:'POST',
+          url:'phpScripts/changeQuantity.php',
+          data:{'product_ID':product_ID, 'quantity':quantity},
+          success: function(data){
+              alert (data);
+              location.reload();
+              window.location = window.location.href + "?basket=1";
+          }
+      });
+  });
+});
+
+function RemoveHREF() {
+    if ((window.location.href).includes("?basket=1")) {
+        window.location = "index.php";
+    }
+}
+
+</script>
