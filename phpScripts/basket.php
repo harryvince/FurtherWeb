@@ -60,4 +60,20 @@ function RemoveHREF() {
     }
 }
 
+$(function(){
+  $(document).on('click','.Remove',function(){
+    var itemID = this.id;
+      $.ajax({
+          type:'POST',
+          url:'phpScripts/RemoveFromCart.php',
+          data:{'itemID':itemID},
+          success: function(data){
+              alert (data);
+              location.reload();
+              window.location = window.location.href + "?basket=1";
+          }
+      });
+  });
+});
+
 </script>

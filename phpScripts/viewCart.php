@@ -32,7 +32,7 @@ $unique = array_unique($_SESSION['basket']);
                   <input type='number' class='form-control w-25 updateQuantity' id='".$id."' placeholder='".$quantity[$unique[$x]]."'>
                 </div>
                 <p class='card-text'><small class='text-muted'>Cost per unit £".$cost."</small></p>
-                <a href='#' class='btn btn-danger'>Remove</a>
+                <a href='#' id='".$id."' class='btn btn-danger Remove'>Remove</a>
               </div>
             </div>
           </div>
