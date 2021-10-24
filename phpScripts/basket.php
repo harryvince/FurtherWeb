@@ -41,7 +41,10 @@ $(function(){
   $(document).on('change','.updateQuantity',function(){
     var product_ID = this.id;
     var quantity = document.getElementById(product_ID).value;
-    $.ajax({
+    if (quantity < 0){
+      alert("Please enter a Valid value");
+    } else {
+      $.ajax({
           type:'POST',
           url:'phpScripts/changeQuantity.php',
           data:{'product_ID':product_ID, 'quantity':quantity},
@@ -51,6 +54,7 @@ $(function(){
               window.location = window.location.href + "?basket=1";
           }
       });
+    }
   });
 });
 
