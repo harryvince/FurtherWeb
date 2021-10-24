@@ -28,5 +28,6 @@ for($x=0; $x < count($unique); $x++){
 
 unset($_SESSION['basketTotal']);
 unset($_SESSION['basket']);
+session_regenerate_id();
 
 ?>
