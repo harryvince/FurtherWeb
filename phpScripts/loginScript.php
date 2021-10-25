@@ -19,7 +19,6 @@ if(isset($_POST['username']) && isset($_POST['password'])) {
       $_SESSION['username'] = $username;
       $_SESSION['userID'] = $userid;
       $_SESSION['userType'] = $usertype;
-      $_SESSION['SelectedDate'] = date('Y-m-d', time());
       session_regenerate_id();
       header("Location: index");
     }
