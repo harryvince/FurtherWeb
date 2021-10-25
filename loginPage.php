@@ -11,7 +11,7 @@ if(isset($_SESSION['username'])!="")
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/logincss.css">
   <title>Login | Vince Shops</title>
-  <link rel="icon" href="images/favicon.ico"/>
+  <link rel="icon" type="image/x-icon" href="images/favicon.ico"/>
   <script src="https://use.typekit.net/rjb4unc.js"></script>
   <script>try{Typekit.load({ async: true });}catch(e){}</script>
 </head>

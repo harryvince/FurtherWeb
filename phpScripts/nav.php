@@ -11,7 +11,7 @@
         <button class="btn btn-outline-success" style="margin-right:2px">
             <?php
                 if (isset($_SESSION['username'])){
-                    echo"<a href='phpScripts/logout.php'>";
+                    echo"<a title='Logout' href='phpScripts/logout.php'>";
                     echo "Hello, ".$_SESSION['username'];
                     echo "</a>";
                 } else {
