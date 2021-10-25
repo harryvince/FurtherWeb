@@ -15,7 +15,7 @@
                     echo "Hello, ".$_SESSION['username'];
                     echo "</a>";
                 } else {
-                    echo"<a href='loginPage.php'>";
+                    echo"<a href='loginPage'>";
                     echo "Login";
                     echo"</a>";
                 }
@@ -25,7 +25,7 @@
             if(!isset($_SESSION['username'])){
                 echo"
                 <button class='btn btn-outline-success' style='margin-right:2px'>
-                <a href='RegisterPage.php'>
+                <a href='RegisterPage'>
                 Register
                 </a>
                 </button>

@@ -64,7 +64,7 @@ $(function(){
 
 function RemoveHREF() {
     if ((window.location.href).includes("?basket=1")) {
-        window.location = "index.php";
+        window.location = "index";
     }
 }
 
@@ -95,7 +95,7 @@ $(function(){
           url:'phpScripts/setCheckoutState.php',
           data:{'checkout':1},
           success: function(data){
-            window.location.href = "checkout.php";
+            window.location.href = "checkout";
           }
         });
       } else {

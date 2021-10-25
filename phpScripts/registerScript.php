@@ -24,7 +24,7 @@ if(isset($_POST['username']) && isset($_POST['password'])) {
     $insertNewUser -> bind_param('ss', $username, $password);
     $insertNewUser -> execute();
     $_SESSION['registered'] = TRUE;
-    header('Location: loginPage.php');
+    header('Location: loginPage');
   }
   $stmt->close();
 }

@@ -1,9 +1,9 @@
 <?php
 require('phpScripts/session.php');
     if(isset($_SESSION['checkout']) && $_SESSION['checkout'] != 1){
-        header('Location: index.php');
+        header('Location: index');
     } elseif(!isset($_SESSION['checkout'])){
-        header('Location: index.php');
+        header('Location: index');
     }
 ?>
 <html>
@@ -44,7 +44,7 @@ $(function(){
         url:'phpScripts/ConfirmOrder.php',
         success: function(data){
             alert ("Order Sent");
-            window.location.href = "index.php";
+            window.location.href = "index";
         }
     });
   });
