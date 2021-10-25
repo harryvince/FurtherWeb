@@ -24,5 +24,6 @@ if($stmt->num_rows == 1){
 } else {
     echo"Unable to add item to the cart";
 }
+$stmt->close();
 
 ?>
