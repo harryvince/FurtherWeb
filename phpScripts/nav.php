@@ -5,11 +5,7 @@
     </div>
     <span class="navbar-text" style="margin-right:10px;">
         <a style="margin-right:10px;">£ <?php
-        if ($_SESSION['basketTotal'] == 0){
-            echo "0.00";
-        } else {
-         echo $_SESSION['basketTotal'];
-        }
+        echo sprintf("%0.2f",$_SESSION['basketTotal']);
          ?></a>
         <?php require('basket.php')?>
         <button class="btn btn-outline-success" style="margin-right:2px">
