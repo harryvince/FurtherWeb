@@ -18,7 +18,7 @@ for($x=0; $x < count($unique); $x++){
         <h6 class='my-0'>".$name."</h6>
         <small class='text-muted'>".$quantity[$unique[$x]]."x Units</small>
       </div>
-      <span class='text-muted'>£".sprintf("%0.2f",$cost*$quantity[$unique[$x]])."</span>
+      <span class='text-muted'>£".number_format($cost*$quantity[$unique[$x]], 2, '.', ',')."</span>
     </li>
     ";
     }

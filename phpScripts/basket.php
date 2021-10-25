@@ -16,7 +16,7 @@
         <?php require('viewCart.php') ?>
       </div>
       <div class="modal-footer">
-        <?php echo "<p style='color:black' class='total'>Total: £".sprintf("%0.2f",$_SESSION['basketTotal'])."</p>"?>
+        <?php echo "<p style='color:black' class='total'>Total: £".number_format($_SESSION['basketTotal'], 2, '.', ',')."</p>"?>
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onClick="RemoveHREF()">Close</button>
         <button type="button" class="btn btn-primary Checkout">Go to Checkout</button>
       </div>

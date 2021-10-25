@@ -20,7 +20,9 @@ function generateCard($id, $image, $title, $desc, $cost){
           <h5 class='card-title'>$title</h5>
           <p class='card-text'>$desc</p>
           <a type='submit' id='$id' name='addToCart' value='$id' class='btn btn-primary addToCart'>Add to cart</a>
-          <p class='card-text'><small class='text-muted'>£$cost</small></p>
+          <p class='card-text'><small class='text-muted'>£";
+          echo number_format($cost, 2, '.', ',');
+          echo"</small></p>
         </div>
     </div> ";
 }

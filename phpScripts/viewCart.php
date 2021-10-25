@@ -32,8 +32,8 @@ $unique = array_unique($_SESSION['basket']);
                   <input type='number' style='margin-right:10px;' class='form-control form-control-sm w-25 updateQuantity' id='".$id."' placeholder='".$quantity[$unique[$x]]."'>
                   <a id='".$id."' class='btn btn-danger btn-sm Remove'>Remove</a>
                 </div>
-                <p style='margin-top:10px;' class='card-text'><small class='text-muted'>Cost per unit £".$cost."</small></p>
-                <p class='card-text'><small class='text-muted'>Cost £".sprintf("%0.2f",$cost*$quantity[$unique[$x]])."</small></p>
+                <p style='margin-top:10px;' class='card-text'><small class='text-muted'>Cost per unit £".number_format($cost, 2, '.', ',')."</small></p>
+                <p class='card-text'><small class='text-muted'>Cost £".number_format($cost*$quantity[$unique[$x]], 2, '.', ',')."</small></p>
               </div>
             </div>
           </div>

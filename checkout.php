@@ -25,7 +25,7 @@ require('phpScripts/session.php');
         <?php require('phpScripts/checkoutCard.php'); ?>
         <li class="list-group-item d-flex justify-content-between">
           <span>Total (GBP)</span>
-          <strong><?php echo "£".sprintf("%0.2f",$_SESSION['basketTotal']);?></strong>
+          <strong><?php echo "£".number_format($_SESSION['basketTotal'], 2, '.', ',');?></strong>
         </li>
       </ul>
 

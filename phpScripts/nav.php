@@ -5,7 +5,7 @@
     </div>
     <span class="navbar-text" style="margin-right:10px;">
         <a style="margin-right:10px;">£ <?php
-        echo sprintf("%0.2f",$_SESSION['basketTotal']);
+        echo number_format($_SESSION['basketTotal'], 2, '.', ',');
          ?></a>
         <?php require('basket.php')?>
         <button class="btn btn-outline-success" style="margin-right:2px">
