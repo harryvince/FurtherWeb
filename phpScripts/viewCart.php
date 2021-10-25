@@ -33,7 +33,7 @@ $unique = array_unique($_SESSION['basket']);
                   <a id='".$id."' class='btn btn-danger btn-sm Remove'>Remove</a>
                 </div>
                 <p style='margin-top:10px;' class='card-text'><small class='text-muted'>Cost per unit £".$cost."</small></p>
-                <p class='card-text'><small class='text-muted'>Cost £".$cost*$quantity[$unique[$x]]."</small></p>
+                <p class='card-text'><small class='text-muted'>Cost £".sprintf("%0.2f",$cost*$quantity[$unique[$x]])."</small></p>
               </div>
             </div>
           </div>
