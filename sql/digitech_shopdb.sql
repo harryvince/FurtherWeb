@@ -2,8 +2,8 @@
 -- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Oct 25, 2021 at 01:01 AM
+-- Host: 127.0.0.1
+-- Generation Time: Oct 25, 2021 at 05:10 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.3.31
 
@@ -50,25 +50,30 @@ INSERT INTO `login_table` (`userId`, `username`, `password`, `userType`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `orderProducts_table`
+-- Table structure for table `orderproducts_table`
 --
 
-CREATE TABLE `orderProducts_table` (
+CREATE TABLE `orderproducts_table` (
   `OrderID` int(11) NOT NULL,
   `ProductID` int(11) NOT NULL,
   `Quantity` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Dumping data for table `orderProducts_table`
+-- Dumping data for table `orderproducts_table`
 --
 
-INSERT INTO `orderProducts_table` (`OrderID`, `ProductID`, `Quantity`) VALUES
+INSERT INTO `orderproducts_table` (`OrderID`, `ProductID`, `Quantity`) VALUES
 (2, 4, 4),
 (2, 7, 1),
 (2, 1, 1),
 (2, 8, 15),
-(1, 6, 1);
+(1, 6, 1),
+(3, 4, 1),
+(3, 2, 1),
+(3, 5, 1),
+(3, 1, 1),
+(3, 3, 10);
 
 -- --------------------------------------------------------
 
@@ -88,7 +93,8 @@ CREATE TABLE `order_table` (
 
 INSERT INTO `order_table` (`OrderID`, `UserID`, `Total`) VALUES
 (1, 5, 0.99),
-(2, 1, 3937.75);
+(2, 1, 3937.75),
+(3, 1, 519.63);
 
 -- --------------------------------------------------------
 
@@ -129,9 +135,9 @@ ALTER TABLE `login_table`
   ADD PRIMARY KEY (`userId`);
 
 --
--- Indexes for table `orderProducts_table`
+-- Indexes for table `orderproducts_table`
 --
-ALTER TABLE `orderProducts_table`
+ALTER TABLE `orderproducts_table`
   ADD KEY `OrderID` (`OrderID`),
   ADD KEY `ProductID` (`ProductID`);
 
@@ -162,7 +168,7 @@ ALTER TABLE `login_table`
 -- AUTO_INCREMENT for table `order_table`
 --
 ALTER TABLE `order_table`
-  MODIFY `OrderID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `OrderID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `product_table`
@@ -175,9 +181,9 @@ ALTER TABLE `product_table`
 --
 
 --
--- Constraints for table `orderProducts_table`
+-- Constraints for table `orderproducts_table`
 --
-ALTER TABLE `orderProducts_table`
+ALTER TABLE `orderproducts_table`
   ADD CONSTRAINT `OrderID` FOREIGN KEY (`OrderID`) REFERENCES `order_table` (`OrderID`),
   ADD CONSTRAINT `ProductID` FOREIGN KEY (`ProductID`) REFERENCES `product_table` (`ProductID`);
 
