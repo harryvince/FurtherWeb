@@ -19,7 +19,7 @@ if(isset($_POST['username']) && isset($_POST['password'])) {
       $_SESSION['username'] = $username;
       $_SESSION['userID'] = $userid;
       $_SESSION['userType'] = $usertype;
-      $_SESSION['registered'] = FALSE;
+      unset($_SESSION['registered']);
       session_regenerate_id();
       header("Location: index");
     }
