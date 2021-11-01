@@ -7,7 +7,8 @@ if(isset($_POST['username']) && isset($_POST['password'])) {
   $username = sanitize(mysqli_real_escape_string($conn, $_POST['username']));
   $password = sanitize(mysqli_real_escape_string($conn, $_POST['password']));
 
-  $password = hash('sha256', $password);
+  //$password = hash('sha256', $password);
+  $password = password_hash($password, PASSWORD_BCRYPT);
 
   $stmt = $conn -> prepare('SELECT username FROM login_table WHERE username = ? LIMIT 1');
   $stmt -> bind_param('s', $username);
