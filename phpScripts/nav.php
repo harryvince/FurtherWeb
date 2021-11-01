@@ -1,6 +1,6 @@
 <nav class="navbar navbar-dark bg-dark justify-content-between">
     <div class="navbar-nav mr-auto flex-row">
-        <a class="navbar-brand" style="margin-left:20px;">Vince Shops</a>
+        <a class="navbar-brand" style="margin-left:20px;">Dipping Donuts</a>
         <?php require('navbarItems.php'); ?>
     </div>
     <span class="navbar-text" style="margin-right:10px;">

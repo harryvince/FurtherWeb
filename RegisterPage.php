@@ -11,7 +11,7 @@ if(isset($_SESSION['username'])!="")
 <head>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="css/logincss.css">
-  <title>Register | Vince Shops</title>
+  <title>Register | Dipping Donuts</title>
   <link rel="icon" type="image/x-icon" href="images/favicon.ico"/>
   <script src="https://use.typekit.net/rjb4unc.js"></script>
   <script>try{Typekit.load({ async: true });}catch(e){}</script>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 25, 2021 at 05:10 PM
+-- Generation Time: Nov 01, 2021 at 02:11 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.3.31
 
@@ -39,13 +39,15 @@ CREATE TABLE `login_table` (
 --
 
 INSERT INTO `login_table` (`userId`, `username`, `password`, `userType`) VALUES
-(1, 'harry', '5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8', 1),
-(2, 'matt', '5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8', 0),
-(4, 'neil', '592932b7281659a4a5cf427b91196619e7c57f511ca81a9319090feddfb2f0c3', 0),
-(5, 'test', '5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8', 0),
-(6, 'admin', '592932b7281659a4a5cf427b91196619e7c57f511ca81a9319090feddfb2f0c3', 1),
-(7, 'dave', '5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8', 0),
-(8, 'shopUser', '5e884898da28047151d0e56f8dc6292773603d0d6aabbdd62a11ef721d1542d8', 0);
+(1, 'harry', '$2y$10$3H2Z4eSd6.wAgIUu7dCdLOD0aAXfC08dbl5ST/Li5gmqBlkfLWi4i', 1),
+(2, 'matt', '$2y$10$3H2Z4eSd6.wAgIUu7dCdLOD0aAXfC08dbl5ST/Li5gmqBlkfLWi4i', 0),
+(4, 'neil', '$2y$10$3H2Z4eSd6.wAgIUu7dCdLOD0aAXfC08dbl5ST/Li5gmqBlkfLWi4i', 0),
+(5, 'test', '$2y$10$3H2Z4eSd6.wAgIUu7dCdLOD0aAXfC08dbl5ST/Li5gmqBlkfLWi4i', 0),
+(6, 'admin', '$2y$10$3H2Z4eSd6.wAgIUu7dCdLOD0aAXfC08dbl5ST/Li5gmqBlkfLWi4i', 1),
+(7, 'dave', '$2y$10$3H2Z4eSd6.wAgIUu7dCdLOD0aAXfC08dbl5ST/Li5gmqBlkfLWi4i', 0),
+(8, 'shopUser', '$2y$10$3H2Z4eSd6.wAgIUu7dCdLOD0aAXfC08dbl5ST/Li5gmqBlkfLWi4i', 0),
+(9, 'golfLegend', '$2y$10$3H2Z4eSd6.wAgIUu7dCdLOD0aAXfC08dbl5ST/Li5gmqBlkfLWi4i', 0),
+(10, 'TestUser', '$2y$10$ZLdMGnWkWMlIiPwZ6EgWs.iw2Pyv5IRrXbRDtBmjgbSfxVRHPbcou', 0);
 
 -- --------------------------------------------------------
 
@@ -73,7 +75,25 @@ INSERT INTO `orderproducts_table` (`OrderID`, `ProductID`, `Quantity`) VALUES
 (3, 2, 1),
 (3, 5, 1),
 (3, 1, 1),
-(3, 3, 10);
+(3, 3, 10),
+(4, 7, 5),
+(5, 7, 1),
+(5, 5, 1),
+(5, 6, 71),
+(5, 2, 1),
+(5, 3, 4),
+(6, 5, 2),
+(6, 3, 50),
+(6, 7, 1),
+(6, 1, 1),
+(7, 4, 1),
+(7, 1, 3),
+(7, 7, 2),
+(8, 5, 1),
+(9, 1, 1),
+(9, 3, 10),
+(9, 4, 1),
+(9, 7, 1);
 
 -- --------------------------------------------------------
 
@@ -94,7 +114,13 @@ CREATE TABLE `order_table` (
 INSERT INTO `order_table` (`OrderID`, `UserID`, `Total`) VALUES
 (1, 5, 0.99),
 (2, 1, 3937.75),
-(3, 1, 519.63);
+(3, 1, 519.63),
+(4, 1, 13640),
+(5, 1, 2963),
+(6, 9, 3194.04),
+(7, 1, 6012.93),
+(8, 1, 76.78),
+(9, 1, 3098.86);
 
 -- --------------------------------------------------------
 
@@ -115,14 +141,14 @@ CREATE TABLE `product_table` (
 --
 
 INSERT INTO `product_table` (`ProductID`, `ProductName`, `ProductDescription`, `image`, `cost`) VALUES
-(1, 'Golf Bag', 'This one of a kind golf bag is great, store all your clubs and balls in once place!', 'golfbag.jpg', 112.99),
-(2, 'Golf Club', 'This one of a kind golf club is only for sale here!', 'golfclub.jpg', 71.98),
-(3, 'Titleist Golf Ball', 'Get your golf balls today! Receive a stacked discount when buying 10+ balls at checkout', 'ball.png', 3.99),
-(4, 'Cobra Driver', 'The only premium driver on sale for a cheap price! Purchase yours today', 'cobraClub.jfif', 217.98),
-(5, 'Ping Putter', 'This ping putter is a high quality tool for the job. You\'ll be getting a par easily', 'pingPutter.jpeg', 76.78),
-(6, 'Standard golf ball', 'Just a standard golf ball at a cheap price, Buy 10+ balls for a discount at checkout', 'standardBall.jpg', 0.99),
-(7, 'Golf Cart', 'This limited edition item is only on sale for a short time! Buy your golf cart today!', 'gCart.jpg', 2727.99),
-(8, 'Football', 'Our brand new Adidas collection, available today! Buy your football today and qualify for a pump free of charge', 'football.jpeg', 14.99);
+(1, 'Chocolate Frosted Donuts', 'Here are our chocolate frosted donuts with sprinkles! Only Available at dipping donuts', 'chocFrost.jpg', 3.99),
+(2, 'LGBTQ+ Donuts', 'Our LGBTQ+ Donuts are here in support of pride month, Only available until Janurary 31st', 'lgbt.jpg', 4.99),
+(3, 'Reflective Donuts', 'Here are our reflective donuts! With our special recipe the donuts shine under light showing different shades', 'reflective.jpg', 6.99),
+(4, 'Rainbow Donuts', 'Our luxury rainbow donuts offered courtesy of Dipping Donuts', 'rainbow.jpg', 2.99),
+(5, 'Chocolate Donuts', 'Our standard Chocolate donuts, with a chocolate filling. Courtesy of Dipping Donuts', 'choc.jpg', 3.99),
+(6, 'Custard Donut', 'Our widely available Custard donuts, yes you\'ve seen them in your local supermarket. But they ain\'t no \"Dipping Donuts\"', 'custard.jpg', 0.99),
+(7, 'Jam Donuts', 'Our widely available Jam donuts, yes you\'ve seen them in your local supermarket. But they ain\'t no \"Dipping Donuts\"', 'jam.jfif', 0.99),
+(8, 'Classic Donut', 'Our widely available Classic donuts, yes you\'ve seen them in your local supermarket. But they ain\'t no \"Dipping Donuts\"', 'classic.jpg', 1.99);
 
 --
 -- Indexes for dumped tables
@@ -162,13 +188,13 @@ ALTER TABLE `product_table`
 -- AUTO_INCREMENT for table `login_table`
 --
 ALTER TABLE `login_table`
-  MODIFY `userId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `userId` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `order_table`
 --
 ALTER TABLE `order_table`
-  MODIFY `OrderID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `OrderID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `product_table`
