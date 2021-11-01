@@ -21,6 +21,10 @@ if(isset($_POST['username']) && isset($_POST['password'])) {
         unset($_SESSION['registered']);
         session_regenerate_id();
         header("Location: index");
+      } else {
+        echo "<br>";
+        echo "<br>";
+        echo "<p class='fonts' style='text-align: center; color: red;'>Incorrect Password!</p>";
       }
     }
   }
