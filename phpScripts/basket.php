@@ -54,7 +54,7 @@ $(function(){
           url:'phpScripts/changeQuantity.php',
           data:{'product_ID':product_ID, 'quantity':quantity},
           success: function(data){
-              alert (data);
+              alert ("Quantity Updated");
               location.reload();
               window.location = window.location.href + "?basket=1";
           }
