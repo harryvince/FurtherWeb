@@ -1,8 +1,8 @@
 <?php
 require('connectDB.php');
 require('functions.php');
+require('session.php');
 error_reporting(E_ERROR | E_PARSE);
-session_start();
 if(isset($_POST['username']) && isset($_POST['password'])) {
   $username = sanitize(mysqli_real_escape_string($conn, $_POST['username']));
   $password = sanitize(mysqli_real_escape_string($conn, $_POST['password']));
@@ -29,4 +29,5 @@ if(isset($_POST['username']) && isset($_POST['password'])) {
   }
   $stmt->close();
 }
+session_write_close();
 ?>

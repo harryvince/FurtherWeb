@@ -33,8 +33,9 @@
         </script>
 <?php         
     }
-
-$numberofItems = count($_SESSION['basket']);
+if(isset($_SESSION['basket'])){
+  $numberofItems = count($_SESSION['basket']);
+}
 $loggedIN = isset($_SESSION['username']);
 
 ?>

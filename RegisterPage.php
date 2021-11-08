@@ -21,7 +21,7 @@ if(isset($_SESSION['username'])!="")
 <body>
     <div class="container">
     <div class="logo"><img src="images/cart.png" style="width:40px;height:40px;margin-top:5px;margin-right:5px;" /></div>
-    <?php require('phpScripts/registerScript.php'); ?>
+    <?php require('phpScripts/registerScript.php');?>
     <div class="login-item">
       <form method="post" class="form form-login">
         <div class="form-field">

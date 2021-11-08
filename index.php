@@ -38,4 +38,5 @@ $(function(){
       });
   });
 });
+<?php session_write_close(); ?>
 </script>

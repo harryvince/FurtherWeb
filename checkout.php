@@ -36,7 +36,7 @@ require('phpScripts/session.php');
 
     </div>
   </div>
-
+<?php session_write_close(); ?>
 <script>
 $(function(){
   $(document).on('click','.SubmitOrder',function(){

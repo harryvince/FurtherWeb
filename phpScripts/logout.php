@@ -7,4 +7,5 @@
   session_regenerate_id();
   // Redirecting to homepage
   header("Location: http://".$_SERVER['HTTP_HOST'].'/index');
+  session_write_close();
 ?>

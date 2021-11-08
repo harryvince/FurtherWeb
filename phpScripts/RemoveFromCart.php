@@ -37,5 +37,4 @@ if(isset($newTotal)){
 }
 
 echo"Item Removed";
-
 ?>

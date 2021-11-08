@@ -1,9 +1,10 @@
 <?php
 require('connectDB.php');
 require('functions.php');
+require('session.php');
 error_reporting(E_ERROR | E_PARSE);
-session_start();
 if(isset($_POST['username']) && isset($_POST['password'])) {
+  // Cleansing Data
   $username = sanitize(mysqli_real_escape_string($conn, $_POST['username']));
   $inputtedpassword = sanitize(mysqli_real_escape_string($conn, $_POST['password']));
 
@@ -17,8 +18,8 @@ if(isset($_POST['username']) && isset($_POST['password'])) {
       if(password_verify($inputtedpassword, $password)){
         $_SESSION['username'] = $username;
         $_SESSION['userID'] = $userid;
-        $_SESSION['userType'] = $usertype;
         unset($_SESSION['registered']);
+        $_SESSION['session_time'] = time(); // Resetting the timeout on the session
         session_regenerate_id();
         header("Location: index");
       } else {
@@ -36,4 +37,5 @@ if(isset($_POST['username']) && isset($_POST['password'])) {
   }
   $stmt->close();
 }
+session_write_close();
 ?>

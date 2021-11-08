@@ -1,7 +1,7 @@
 <?php
 require('functions.php');
 require('connectDB.php');
-session_start();
+require('session.php');
 
 if(isset($_POST['product_ID']) && isset($_POST['quantity'])) {
 
