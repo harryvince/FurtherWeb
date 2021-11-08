@@ -64,8 +64,6 @@ if(isset($_POST['username']) && isset($_POST['password'])) {
                 session_regenerate_id();
                 header("Location: http://".$_SERVER['HTTP_HOST']);
               } else {
-                echo "<br>";
-                echo "<br>";
                 echo "<p class='fonts' style='text-align: center; color: red;'>Incorrect Password!</p>";
                 $_SESSION['retryCount']++;
               }
