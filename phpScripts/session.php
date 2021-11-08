@@ -21,6 +21,7 @@ if (session_status() === PHP_SESSION_NONE) {
     if(isset($_SESSION['session_time'])){
         if(((time() - $_SESSION['session_time']) > $session_duration)){
             session_destroy();
+            header("Location: http://".$_SERVER['HTTP_HOST'].'/index');
         }
     }
 }
